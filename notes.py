@@ -6,6 +6,11 @@
 
 # choice()
 
+# sum()
+
+# max and min
+
+
 
 # print(round(bmi_calc, 3))
 # print(f"{bmi_calc:.3f}")
@@ -28,7 +33,7 @@
 
 # .count()
 # .split()
-
+# sum()
 
 
 
@@ -42,3 +47,4 @@
 # .pop()
 # .insert()
 # .extend()
+# sum()
