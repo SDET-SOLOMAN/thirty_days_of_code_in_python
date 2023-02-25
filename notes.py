@@ -10,6 +10,8 @@
 
 # max and min
 
+# def my_func(something(parameter) = argument ):
+
 
 
 # print(round(bmi_calc, 3))
