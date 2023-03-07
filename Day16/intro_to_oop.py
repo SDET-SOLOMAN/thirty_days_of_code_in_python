@@ -1,6 +1,8 @@
-# object                class
-# car =     MyBlueCar()
+#  object / clone         class / blueprint
+#       car         =       MyBlueCar()
 
+# attribute = what waiter has
+# method / function = what waiter does
 
 # object/ attribute
 # car.speed - attribute of MyBlueCar class became attribute of my car object
