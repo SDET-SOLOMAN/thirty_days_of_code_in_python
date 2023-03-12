@@ -5,6 +5,7 @@ UP = 90
 DOWN = 270
 LEFT = 180
 RIGHT = 0
+POSITIONS = [(0, 0), (-10, 0), (-20, 0)]
 
 
 class Snake:
@@ -15,14 +16,22 @@ class Snake:
         self.head = self.my_snakes[0]  # setting variable to call out head of snake
 
     def create_a_snake(self):
-        # Snake for loop to create Snake pieces
-        for num in range(0, 3):
-            my_snake = Turtle("square")  # set snake shape to Square
-            my_snake.color("white")  # set snake color to white
-            my_snake.penup()  # lift pen up so no drawing when moving snake in XY coordinates
-            my_snake.goto(x=self.nums, y=0)  # position of the snake
-            self.nums -= 20  # -20 in X coordinate each time to add pieces of snake to the left
-            self.my_snakes.append(my_snake)  # adding to the list of snake pieces
+        # Snake for loop to create initial Snake pieces
+        for num in POSITIONS:
+            self.add_piece(num)
+
+    # adds one snake per call
+    def add_piece(self, position):
+        my_snake = Turtle("square")  # set snake shape to Square
+        my_snake.color("white")  # set snake color to white
+        my_snake.penup()  # lift pen up so no drawing when moving snake in XY coordinates
+        my_snake.goto(position)  # position of the snake
+        self.nums -= 20  # -20 in X coordinate each time to add pieces of snake to the left
+        self.my_snakes.append(my_snake)  # adding to the list of snake pieces
+
+    # Adds snake to the end of the list
+    def snake_growth(self):
+        self.add_piece(self.my_snakes[-1].position())
 
     def move(self):
         # Last snake changes XY position to the XY position of the snake in front of it,
@@ -50,3 +59,9 @@ class Snake:
     def right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    # Checks if there is a wall, returns a bool value
+    def is_it_wall(self):
+        if self.head.xcor() > 280 or self.head.xcor() < - 280 or self.head.ycor() > 280 or self.head.ycor() < - 280:
+            return False
+        return True
