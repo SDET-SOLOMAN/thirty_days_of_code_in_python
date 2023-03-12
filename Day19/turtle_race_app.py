@@ -14,7 +14,7 @@ for num in my_colors:
     matveeva = Turtle('turtle')
     matveeva.color(num)
     matveeva.penup()
-    matveeva.goto(x=(-230), y=(-80 + number))
+    matveeva.goto(x=(-224), y=(-80 + number))
     number += 40
     list_of_matveevas.append(matveeva)
 
